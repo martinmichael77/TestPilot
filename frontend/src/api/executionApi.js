@@ -21,7 +21,7 @@ export async function runCollection({ collectionFile, environmentFile, environme
   }
   formData.append('environmentVariables', JSON.stringify(environmentVariables || {}));
 
-  const { data } = await apiClient.post('/run-collection', formData, {
+  const { data } = await apiClient.post('/api/run-collection', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   });
 
