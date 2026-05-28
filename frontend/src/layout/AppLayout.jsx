@@ -16,8 +16,8 @@ import {
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+// import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+// import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import RocketLaunchOutlinedIcon from '@mui/icons-material/RocketLaunchOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
@@ -30,8 +30,8 @@ const navItems = [
   { label: 'Upload Collection', path: '/upload', icon: <CloudUploadOutlinedIcon /> },
   { label: 'Run Results', path: '/results', icon: <RocketLaunchOutlinedIcon /> },
   { label: 'History', path: '/history', icon: <HistoryOutlinedIcon /> },
-  { label: 'Settings', path: '/settings', icon: <SettingsOutlinedIcon /> },
-  { label: 'Login', path: '/login', icon: <LoginOutlinedIcon /> },
+  // { label: 'Settings', path: '/settings', icon: <SettingsOutlinedIcon /> },
+  // { label: 'Login', path: '/login', icon: <LoginOutlinedIcon /> },
 ];
 
 function NavigationList({ onSelect }) {
