@@ -1,0 +1,82 @@
+{
+  "info": {
+    "_postman_id": "b8f8d6df-1e7f-4c52-8a63-1fd09f3b4b71",
+    "name": "TestPilot Sample Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "A beginner-friendly sample collection for testing TestPilot. It includes one request expected to pass and one request expected to fail so the UI can show both outcomes."
+  },
+  "item": [
+    {
+      "name": "Get Postman Echo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/get?source=testpilot",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "source",
+              "value": "testpilot"
+            }
+          ]
+        },
+        "description": "Simple GET request to confirm the environment variable is working."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Response includes query parameter', function () {",
+              "  var jsonData = pm.response.json();",
+              "  pm.expect(jsonData.args.source).to.eql('testpilot');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Intentional Failure Example",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/status/200",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "status",
+            "200"
+          ]
+        },
+        "description": "This request intentionally checks for the wrong status code so you can see how failures appear in TestPilot."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code should be 201', function () {",
+              "  pm.response.to.have.status(201);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

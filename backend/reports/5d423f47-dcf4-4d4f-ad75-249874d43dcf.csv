@@ -1,0 +1,3 @@
+Request Name,Method,Status Code,Response Time,Passed,Error Message
+Get Postman Echo,GET,0,0,false,expected { Object (id; _details; ...) } to have property 'code'
+Intentional Failure Example,GET,0,0,false,expected { Object (id; _details; ...) } to have property 'code'

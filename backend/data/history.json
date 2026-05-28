@@ -1,0 +1,217 @@
+[
+  {
+    "executionId": "6dcc0666-bd6f-4a69-8af0-3b38f8abc1fd",
+    "totalRequests": 2,
+    "passedRequests": 1,
+    "failedRequests": 1,
+    "averageResponseTime": 272,
+    "duration": 746,
+    "results": [
+      {
+        "requestName": "Get Postman Echo",
+        "method": "GET",
+        "statusCode": 200,
+        "responseTime": 274,
+        "passed": true,
+        "assertionResults": [
+          {
+            "name": "Status code is 200",
+            "passed": true,
+            "expected": null,
+            "actual": null,
+            "errorReason": null,
+            "beginnerExplanation": null
+          },
+          {
+            "name": "Response includes query parameter",
+            "passed": true,
+            "expected": null,
+            "actual": null,
+            "errorReason": null,
+            "beginnerExplanation": null
+          }
+        ],
+        "errorMessage": null,
+        "responseStatus": "OK",
+        "responseBodyPreview": "{\"args\":{\"source\":\"testpilot\"},\"headers\":{\"host\":\"postman-echo.com\",\"x-forwarded-proto\":\"https\",\"user-agent\":\"PostmanRuntime/7.24.1\",\"accept\":\"*/*\",\"accept-encoding\":\"gzip, br\",\"postman-token\":\"80cb1cdc-1b9f-4cbd-858a-3ecdad50fda3\",\"cache-control\":\"no-cache\"},\"url\":\"https://postman-echo.com/get?source=testpilot\"}"
+      },
+      {
+        "requestName": "Intentional Failure Example",
+        "method": "GET",
+        "statusCode": 200,
+        "responseTime": 269,
+        "passed": false,
+        "assertionResults": [
+          {
+            "name": "Status code should be 201",
+            "passed": false,
+            "expected": null,
+            "actual": null,
+            "errorReason": "expected response to have status code 201 but got 200",
+            "beginnerExplanation": "The assertion did not match the expected result. Please review expected and actual values."
+          }
+        ],
+        "errorMessage": "expected response to have status code 201 but got 200",
+        "responseStatus": "OK",
+        "responseBodyPreview": "{\"status\":200}"
+      }
+    ],
+    "reportPaths": {
+      "html": "C:\\TestPilot\\backend\\reports\\6dcc0666-bd6f-4a69-8af0-3b38f8abc1fd.html",
+      "csv": "C:\\TestPilot\\backend\\reports\\6dcc0666-bd6f-4a69-8af0-3b38f8abc1fd.csv",
+      "pdf": "C:\\TestPilot\\backend\\reports\\6dcc0666-bd6f-4a69-8af0-3b38f8abc1fd.pdf"
+    },
+    "collectionName": "sample-postman-collection.json",
+    "runDate": "2026-05-27T11:13:21.260Z",
+    "passPercentage": 50
+  },
+  {
+    "executionId": "5d423f47-dcf4-4d4f-ad75-249874d43dcf",
+    "totalRequests": 2,
+    "passedRequests": 0,
+    "failedRequests": 2,
+    "averageResponseTime": 0,
+    "duration": 169,
+    "results": [
+      {
+        "requestName": "Get Postman Echo",
+        "method": "GET",
+        "statusCode": 0,
+        "responseTime": 0,
+        "passed": false,
+        "assertionResults": [
+          {
+            "name": "Status code is 200",
+            "passed": false,
+            "expected": null,
+            "actual": null,
+            "errorReason": "expected { Object (id, _details, ...) } to have property 'code'",
+            "beginnerExplanation": "The assertion did not match the expected result. Please review expected and actual values."
+          },
+          {
+            "name": "Response includes query parameter",
+            "passed": false,
+            "expected": null,
+            "actual": null,
+            "errorReason": "\"undefined\" is not valid JSON",
+            "beginnerExplanation": "The assertion did not match the expected result. Please review expected and actual values."
+          }
+        ],
+        "errorMessage": "expected { Object (id, _details, ...) } to have property 'code'",
+        "responseStatus": "Unknown",
+        "responseBodyPreview": ""
+      },
+      {
+        "requestName": "Intentional Failure Example",
+        "method": "GET",
+        "statusCode": 0,
+        "responseTime": 0,
+        "passed": false,
+        "assertionResults": [
+          {
+            "name": "Status code should be 201",
+            "passed": false,
+            "expected": null,
+            "actual": null,
+            "errorReason": "expected { Object (id, _details, ...) } to have property 'code'",
+            "beginnerExplanation": "The assertion did not match the expected result. Please review expected and actual values."
+          }
+        ],
+        "errorMessage": "expected { Object (id, _details, ...) } to have property 'code'",
+        "responseStatus": "Unknown",
+        "responseBodyPreview": ""
+      }
+    ],
+    "reportPaths": {
+      "html": "C:\\TestPilot\\backend\\reports\\5d423f47-dcf4-4d4f-ad75-249874d43dcf.html",
+      "csv": "C:\\TestPilot\\backend\\reports\\5d423f47-dcf4-4d4f-ad75-249874d43dcf.csv",
+      "pdf": "C:\\TestPilot\\backend\\reports\\5d423f47-dcf4-4d4f-ad75-249874d43dcf.pdf"
+    },
+    "collectionName": "sample-postman-collection.json",
+    "runDate": "2026-05-27T11:13:11.169Z",
+    "passPercentage": 0
+  },
+  {
+    "executionId": "4645d831-3138-4789-a325-bdda94f1211d",
+    "totalRequests": 2,
+    "passedRequests": 1,
+    "failedRequests": 1,
+    "averageResponseTime": 443,
+    "duration": 1131,
+    "results": [
+      {
+        "requestName": "Get Postman Echo",
+        "method": "GET",
+        "statusCode": 200,
+        "responseTime": 614,
+        "passed": true,
+        "assertionResults": [
+          {
+            "name": "Status code is 200",
+            "passed": true,
+            "expected": null,
+            "actual": null,
+            "errorReason": null,
+            "beginnerExplanation": null
+          },
+          {
+            "name": "Response includes query parameter",
+            "passed": true,
+            "expected": null,
+            "actual": null,
+            "errorReason": null,
+            "beginnerExplanation": null
+          }
+        ],
+        "errorMessage": null,
+        "responseStatus": "OK",
+        "responseBodyPreview": "{\"args\":{\"source\":\"testpilot\"},\"headers\":{\"host\":\"postman-echo.com\",\"x-forwarded-proto\":\"https\",\"user-agent\":\"PostmanRuntime/7.24.1\",\"accept\":\"*/*\",\"accept-encoding\":\"gzip, br\",\"postman-token\":\"e65fb8d8-344b-4a8f-9a1b-3000f3500d9f\",\"cache-control\":\"no-cache\"},\"url\":\"https://postman-echo.com/get?source=testpilot\"}"
+      },
+      {
+        "requestName": "Intentional Failure Example",
+        "method": "GET",
+        "statusCode": 200,
+        "responseTime": 271,
+        "passed": false,
+        "assertionResults": [
+          {
+            "name": "Status code should be 201",
+            "passed": false,
+            "expected": null,
+            "actual": null,
+            "errorReason": "expected response to have status code 201 but got 200",
+            "beginnerExplanation": "The assertion did not match the expected result. Please review expected and actual values."
+          }
+        ],
+        "errorMessage": "expected response to have status code 201 but got 200",
+        "responseStatus": "OK",
+        "responseBodyPreview": "{\"status\":200}"
+      }
+    ],
+    "reportPaths": {
+      "html": "C:\\TestPilot\\backend\\reports\\4645d831-3138-4789-a325-bdda94f1211d.html",
+      "csv": "C:\\TestPilot\\backend\\reports\\4645d831-3138-4789-a325-bdda94f1211d.csv",
+      "pdf": "C:\\TestPilot\\backend\\reports\\4645d831-3138-4789-a325-bdda94f1211d.pdf"
+    },
+    "collectionName": "sample-postman-collection.json",
+    "runDate": "2026-05-27T11:11:52.981Z",
+    "passPercentage": 50
+  },
+  {
+    "executionId": "3d17e345-7807-4cf3-86a0-33f0515dad6f",
+    "totalRequests": 0,
+    "passedRequests": 0,
+    "failedRequests": 0,
+    "averageResponseTime": 0,
+    "duration": 6,
+    "results": [],
+    "reportPaths": {
+      "html": "C:\\TestPilot\\backend\\reports\\3d17e345-7807-4cf3-86a0-33f0515dad6f.html",
+      "csv": "C:\\TestPilot\\backend\\reports\\3d17e345-7807-4cf3-86a0-33f0515dad6f.csv",
+      "pdf": "C:\\TestPilot\\backend\\reports\\3d17e345-7807-4cf3-86a0-33f0515dad6f.pdf"
+    },
+    "collectionName": "Test_sample.json",
+    "runDate": "2026-05-27T11:07:06.949Z",
+    "passPercentage": 0
+  }
+]
