@@ -8,12 +8,8 @@ const ThemeModeContext = createContext({
 });
 
 export function ThemeModeProvider({ children }) {
-  const [mode, setMode] = useState('light');
-
-  const toggleMode = () => {
-    setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
-  };
-
+  const mode = 'dark';
+  const toggleMode = () => {};
   const theme = useMemo(
     () =>
       createTheme({
@@ -31,16 +27,10 @@ export function ThemeModeProvider({ children }) {
           error: {
             main: '#dc2626',
           },
-          background:
-            mode === 'light'
-              ? {
-                  default: '#f4f7f9',
-                  paper: '#ffffff',
-                }
-              : {
-                  default: '#111827',
-                  paper: '#1f2937',
-                },
+          background: {
+            default: '#111827',
+            paper: '#1f2937',
+          },
         },
         shape: {
           borderRadius: 12,
@@ -49,9 +39,8 @@ export function ThemeModeProvider({ children }) {
           fontFamily: 'Poppins, Segoe UI, sans-serif',
         },
       }),
-    [mode],
+    []
   );
-
   return (
     <ThemeModeContext.Provider value={{ mode, toggleMode }}>
       <ThemeProvider theme={theme}>
