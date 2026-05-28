@@ -7,7 +7,7 @@ export async function validateUpload(collectionFile, environmentFile) {
     formData.append('environment', environmentFile);
   }
 
-  const { data } = await apiClient.post('/upload', formData, {
+  const { data } = await apiClient.post('/api/upload', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   });
   return data;
@@ -29,21 +29,21 @@ export async function runCollection({ collectionFile, environmentFile, environme
 }
 
 export async function fetchExecutionHistory() {
-  const { data } = await apiClient.get('/execution-history');
+  const { data } = await apiClient.get('/api/execution-history');
   return data;
 }
 
 export async function fetchExecutionById(id) {
-  const { data } = await apiClient.get(`/execution/${id}`);
+  const { data } = await apiClient.get(`/api/execution/${id}`);
   return data;
 }
 
 export async function deleteExecution(id) {
-  const { data } = await apiClient.delete(`/execution/${id}`);
+  const { data } = await apiClient.delete(`/api/execution/${id}`);
   return data;
 }
 
 export function getReportDownloadUrl(id, format) {
-  const apiBase = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
-  return `${apiBase}/execution/${id}/report/${format}`;
+  const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+  return `${apiBase}/api/execution/${id}/report/${format}`;
 }
