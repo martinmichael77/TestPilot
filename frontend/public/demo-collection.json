@@ -1,0 +1,23 @@
+{
+  "info": {
+    "name": "Demo Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Demo Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/get?foo=bar",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["get"],
+          "query": [{"key": "foo", "value": "bar"}]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -72,8 +72,28 @@ export default function RequestResultsAccordion({ results }) {
                 <>
                   <Divider />
                   <Typography variant="subtitle2">Response Body Preview</Typography>
-                  <Box component="pre" sx={{ p: 1.2, borderRadius: 1.5, bgcolor: 'grey.100', overflowX: 'auto', m: 0 }}>
-                    {result.responseBodyPreview}
+                  <Box
+                    component="pre"
+                    sx={{
+                      p: 1.2,
+                      borderRadius: 1.5,
+                      bgcolor: (theme) => theme.palette.mode === 'dark' ? 'grey.900' : 'background.paper',
+                      color: (theme) => theme.palette.mode === 'dark' ? 'grey.100' : 'text.primary',
+                      overflowX: 'auto',
+                      overflowY: 'auto',
+                      m: 0,
+                      fontFamily: 'monospace',
+                      maxHeight: 320,
+                      whiteSpace: 'pre',
+                    }}
+                  >
+                    {(() => {
+                      try {
+                        return JSON.stringify(JSON.parse(result.responseBodyPreview), null, 2);
+                      } catch {
+                        return result.responseBodyPreview;
+                      }
+                    })()}
                   </Box>
                 </>
               ) : null}
