@@ -5,10 +5,17 @@ export default function StatsOverview({ history }) {
   const totalRuns = history.length;
   const passedApis = history.reduce((sum, row) => sum + (row.passedRequests || 0), 0);
   const failedApis = history.reduce((sum, row) => sum + (row.failedRequests || 0), 0);
-  const avgResponse =
+  const avgResponseRaw =
     totalRuns === 0
       ? 0
       : Math.round(history.reduce((sum, row) => sum + (row.averageResponseTime || 0), 0) / totalRuns);
+
+  // Format average response time as ms or s
+  const avgResponse = avgResponseRaw > 1000 ? `${(avgResponseRaw / 1000).toFixed(2)} s` : `${avgResponseRaw} ms`;
+
+  // Calculate pass rate
+  const totalApis = passedApis + failedApis;
+  const passRate = totalApis === 0 ? 0 : Math.round((passedApis / totalApis) * 100);
 
   const chartData = history.slice(0, 8).map((row, index) => ({
     name: `Run ${history.length - index}`,
@@ -17,10 +24,10 @@ export default function StatsOverview({ history }) {
   }));
 
   const cards = [
-    { label: 'Total Test Runs', value: totalRuns },
-    { label: 'Passed APIs', value: passedApis },
+    { label: 'Total Runs', value: totalRuns },
+    { label: 'Pass Rate', value: `${passRate}%` },
     { label: 'Failed APIs', value: failedApis },
-    { label: 'Average Response (ms)', value: avgResponse },
+    { label: 'Avg Response Time', value: avgResponse },
   ];
 
   return (

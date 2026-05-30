@@ -2,14 +2,17 @@
 
 TestPilot is a beginner-friendly API Test Collection Runner for manual QA and early-stage API testers.
 
-## What it does
 
-- Upload Postman collection and optional environment JSON files
-- Manage environment variables using a table UI (no raw JSON editing required)
-- Run collections with Newman from a backend API
-- View pass/fail results with assertion-level details and beginner explanations
-- Download HTML, PDF, and CSV reports
-- Track execution history and open/delete old runs
+## Features
+
+- **Try Demo Collection:** Instantly run a sample collection and environment with one click—no Postman knowledge required.
+- **Upload & Run Collections:** Upload Postman collection and optional environment JSON files. No raw JSON editing needed—manage variables in a table UI.
+- **Execution Progress:** See step-by-step progress (upload, environment, running requests, report generation) for every run.
+- **Beginner-Friendly Results:** View pass/fail results with assertion-level details and AI-powered, beginner-focused error explanations and suggestions.
+- **Slow API Detection:** Requests taking over 1 second are flagged as "⚠ Slow Endpoint" with response time shown.
+- **Downloadable Reports:** Download HTML, PDF, and CSV reports for any run.
+- **Execution History:** Track, open, and delete previous runs. History is persistent with MongoDB Atlas.
+- **Dashboard Metrics:** See total runs, pass rate, failed APIs, and average response time in a professional dashboard.
 
 ## Tech Stack
 
@@ -113,4 +116,5 @@ Free-tier note:
 
 - File upload only accepts `.json` files.
 - Execution history is stored in MongoDB Atlas when `MONGODB_URI` is configured, with local JSON fallback for development.
-- Architecture is modular and ready for future additions like scheduled runs, Slack/Jira integration, and CI/CD hooks.
+- The UI is always in dark mode by default.
+- Architecture is modular and ready for future additions.
