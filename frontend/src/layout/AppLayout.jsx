@@ -12,7 +12,9 @@ import {
   Typography,
   Switch,
   Divider,
+  Avatar,
 } from '@mui/material';
+import TestPilotLogo from '../assets/testpilot-logo.svg';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
@@ -73,9 +75,12 @@ export default function AppLayout() {
           <IconButton color="inherit" edge="start" onClick={() => setMobileOpen(true)} sx={{ mr: 2, display: { md: 'none' } }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 600 }}>
-            TestPilot
-          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+            <Avatar src={TestPilotLogo} alt="TestPilot Logo" sx={{ width: 36, height: 36, mr: 1, bgcolor: 'transparent' }} />
+            <Typography variant="h6" sx={{ fontWeight: 700, letterSpacing: 1 }}>
+              TestPilot
+            </Typography>
+          </Box>
           <Typography variant="body2" sx={{ mr: 1 }}>
             {mode === 'light' ? 'Light' : 'Dark'}
           </Typography>
@@ -94,6 +99,7 @@ export default function AppLayout() {
         }}
       >
         <Toolbar>
+          <Avatar src={TestPilotLogo} alt="TestPilot Logo" sx={{ width: 32, height: 32, mr: 1, bgcolor: 'transparent' }} />
           <Typography variant="h6" fontWeight={700}>
             TestPilot
           </Typography>
@@ -111,6 +117,7 @@ export default function AppLayout() {
         open
       >
         <Toolbar>
+          <Avatar src={TestPilotLogo} alt="TestPilot Logo" sx={{ width: 32, height: 32, mr: 1, bgcolor: 'transparent' }} />
           <Typography variant="h6" fontWeight={700}>
             TestPilot
           </Typography>
