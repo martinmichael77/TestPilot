@@ -6,6 +6,13 @@ import RunResultsPage from './pages/RunResultsPage';
 import HistoryPage from './pages/HistoryPage';
 // import SettingsPage from './pages/SettingsPage';
 // import LoginPage from './pages/LoginPage';
+
+import WebhookDashboard from './pages/webhooks/Dashboard';
+import WebhookEndpoints from './pages/webhooks/Endpoints';
+import WebhookRequests from './pages/webhooks/Requests';
+import WebhookReports from './pages/webhooks/Reports';
+import WebhookHistory from './pages/webhooks/History';
+import WebhookSettings from './pages/webhooks/Settings';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -21,6 +28,13 @@ export default function App() {
         {/* <Route path="login" element={<LoginPage />} /> */}
         <Route path="home" element={<Navigate to="/" replace />} />
         <Route path="*" element={<NotFoundPage />} />
+        {/* Webhook Inspector routes */}
+        <Route path="webhooks/dashboard" element={<WebhookDashboard />} />
+        <Route path="webhooks/endpoints" element={<WebhookEndpoints />} />
+        <Route path="webhooks/requests" element={<WebhookRequests />} />
+        <Route path="webhooks/reports" element={<WebhookReports />} />
+        <Route path="webhooks/history" element={<WebhookHistory />} />
+        <Route path="webhooks/settings" element={<WebhookSettings />} />
       </Route>
     </Routes>
   );

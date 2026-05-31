@@ -27,32 +27,70 @@ import { useThemeMode } from '../context/ThemeModeContext';
 
 const drawerWidth = 250;
 
+import WebhookIcon from '@mui/icons-material/Http';
 const navItems = [
   { label: 'Dashboard', path: '/', icon: <DashboardOutlinedIcon /> },
   { label: 'Upload Collection', path: '/upload', icon: <CloudUploadOutlinedIcon /> },
   { label: 'Run Results', path: '/results', icon: <RocketLaunchOutlinedIcon /> },
   { label: 'History', path: '/history', icon: <HistoryOutlinedIcon /> },
-  // { label: 'Settings', path: '/settings', icon: <SettingsOutlinedIcon /> },
-  // { label: 'Login', path: '/login', icon: <LoginOutlinedIcon /> },
+  {
+    label: 'Webhook Inspector',
+    path: '/webhooks',
+    icon: <WebhookIcon />, // Main entry
+    children: [
+      { label: 'Dashboard', path: '/webhooks/dashboard' },
+      { label: 'Active Endpoints', path: '/webhooks/endpoints' },
+      { label: 'Captured Requests', path: '/webhooks/requests' },
+      { label: 'Validation Reports', path: '/webhooks/reports' },
+      { label: 'Webhook History', path: '/webhooks/history' },
+      { label: 'Settings', path: '/webhooks/settings' },
+    ],
+  },
 ];
 
 function NavigationList({ onSelect }) {
   const location = useLocation();
-
   return (
     <List>
-      {navItems.map((item) => (
-        <ListItemButton
-          key={item.path}
-          component={RouterLink}
-          to={item.path}
-          selected={location.pathname === item.path}
-          onClick={onSelect}
-        >
-          <ListItemIcon>{item.icon}</ListItemIcon>
-          <ListItemText primary={item.label} />
-        </ListItemButton>
-      ))}
+      {navItems.map((item) =>
+        item.children ? (
+          <>
+            <ListItemButton
+              key={item.path}
+              component={RouterLink}
+              to={item.path}
+              selected={location.pathname.startsWith(item.path)}
+              onClick={onSelect}
+            >
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.label} />
+            </ListItemButton>
+            {item.children.map((child) => (
+              <ListItemButton
+                key={child.path}
+                component={RouterLink}
+                to={child.path}
+                sx={{ pl: 5 }}
+                selected={location.pathname === child.path}
+                onClick={onSelect}
+              >
+                <ListItemText primary={child.label} />
+              </ListItemButton>
+            ))}
+          </>
+        ) : (
+          <ListItemButton
+            key={item.path}
+            component={RouterLink}
+            to={item.path}
+            selected={location.pathname === item.path}
+            onClick={onSelect}
+          >
+            <ListItemIcon>{item.icon}</ListItemIcon>
+            <ListItemText primary={item.label} />
+          </ListItemButton>
+        )
+      )}
     </List>
   );
 }

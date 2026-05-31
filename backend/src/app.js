@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const executionRoutes = require('./routes/executionRoutes');
+const webhookRoutes = require('./routes/webhookRoutes');
+const webhookCapture = require('./routes/webhookCapture');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
@@ -15,7 +17,10 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok', service: 'TestPilot API' });
 });
 
+
 app.use('/api', executionRoutes);
+app.use('/api/webhooks', webhookRoutes);
+app.use('/webhooks', webhookCapture);
 
 app.use(notFound);
 app.use(errorHandler);
