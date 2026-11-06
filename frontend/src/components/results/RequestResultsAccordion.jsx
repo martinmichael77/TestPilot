@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-// Enhanced AI-style beginner error explanations
+// Beginner-friendly, rule-based error explanations
 function beginnerHint(statusCode, errorMessage) {
   const text = `${statusCode || ''} ${errorMessage || ''}`.toLowerCase();
   if (text.includes('401')) {
@@ -100,7 +100,7 @@ export default function RequestResultsAccordion({ results }) {
                       <strong>Error:</strong> {result.errorMessage}
                     </Typography>
                     <Typography variant="body2" color="warning.main" sx={{ mt: 0.5 }}>
-                      <strong>AI Explanation:</strong> {hint.main}
+                      <strong>Explanation:</strong> {hint.main}
                     </Typography>
                     {hint.causes && hint.causes.length > 0 && (
                       <ul style={{ margin: '4px 0 0 20px', color: '#fbbf24', fontSize: '0.95em' }}>
